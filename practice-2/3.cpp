@@ -3,26 +3,25 @@
 using namespace std;
 
 void compare() {
-    int inputNum;
-    cin >> inputNum;
-    if (inputNum == 0) {
-        cout << "Сразу введен ноль." << endl;
-    } else {
-        int maxNum;
-        bool isFirst = true;
-        while (true) {
-            int thisInputNum;
-            cin >> thisInputNum;
+    int maxNum;
+    bool isFirst = true;
+    while (true) {
+        int inputNum;
+        cin >> inputNum;
+        if (inputNum == 0) {
             if (isFirst) {
-                maxNum = thisInputNum;
-                isFirst = false;
-            }
-            if (thisInputNum == 0) {
-                cout << "Введен ноль. Наибольшее: " << to_string(maxNum) << endl;
-                break;
+                cout << "Сразу введен ноль." << endl;
             } else {
-                if (thisInputNum >= maxNum) {
-                    maxNum = thisInputNum;
+                cout << "Введен ноль. Наибольшее: " << maxNum << endl;
+            }
+            break;
+        } else {
+            if (isFirst) {
+                maxNum = inputNum;
+                isFirst = false;
+            } else {
+                if (inputNum > maxNum) {
+                    maxNum = inputNum;
                 }
             }
         }
@@ -31,6 +30,5 @@ void compare() {
 
 int main() {
     compare();
-
     return 0;
 }
