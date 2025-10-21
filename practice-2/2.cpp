@@ -7,8 +7,6 @@ void compare() {
     cout << "Введите количество чисел для ввода:"  << endl;
     cin >> inputLength;
     
-    maxNum;
-
     if (inputLength == 0 || inputLength < 0) {
         cout << "Невозможное число. Введите другое." << endl;
     } else if (inputLength == 1) {
