@@ -16,8 +16,13 @@ int main() {
         cin >> thisStr;
         strsVector.push_back(thisStr);
 
-        if (i == (strsNum - 1)) {
-            sort(begin(strsVector), end(strsVector));
+        // Пузырьковая сортировка после каждого ввода
+        for (int j = 0; j < strsVector.size() - 1; j++) {
+            for (int k = 0; k < strsVector.size() - j - 1; k++) {
+                if (strsVector[k] > strsVector[k + 1]) {
+                    swap(strsVector[k], strsVector[k + 1]);
+                }
+            }
         }
     }
 
